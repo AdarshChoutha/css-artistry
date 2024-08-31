@@ -1,7 +1,23 @@
 .gallary {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-    gap: 8px;
-    margin: 8px auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 24px auto 24px;
+    padding-inline: 24px;
+}
+
+@media (max-width: 1280px) {
+    .gallary {
+        gap: 16px;
+        margin: 16px auto 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .gallary {
+        gap: 8px;
+        margin: 8px auto 8px;
+    }
 }

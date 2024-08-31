@@ -5,8 +5,8 @@
     display: grid;
     place-items: center;
     padding: 8px;
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     color: #333;
     overflow: hidden;
     font-family: "Open Sans", Helvetica, sans-serif;

@@ -5,9 +5,15 @@ import styles from './styles.module.css';
 function Tile({
     children,
     classes,
+    containerRef,
+    ...props
 }) {
     return (
-        <div className={classNames(styles.tile, classes)}>
+        <div
+            ref={containerRef}
+            className={classNames(styles.tile, classes)}
+            {...props}
+        >
             {children}
         </div>
     );
