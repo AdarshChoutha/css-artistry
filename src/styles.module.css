@@ -1,0 +1,7 @@
+.gallary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 8px;
+    margin: 8px auto 8px;
+}
