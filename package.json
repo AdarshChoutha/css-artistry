@@ -1,10 +1,13 @@
 {
+  "homepage": "http://adarshchoutha.github.io/css-artistry",
   "name": "css-artistry",
   "version": "1.0.0",
   "private": true,
   "description": "A showcase of innovative CSS designs, featuring a collection of modular web components that demonstrate the creative potential of modern CSS techniques.",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdarshChoutha/css-artisty.git"
@@ -24,6 +27,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

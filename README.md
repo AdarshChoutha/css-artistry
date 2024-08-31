@@ -52,6 +52,10 @@ npm start
 
 Open your browser and go to `http://localhost:3000`.
 
+## View the Website
+
+This project is deployed on GitHub Pages. You can view the live version of the website here: **[CSS Artistry](https://adarshchoutha.github.io/css-artistry)**
+
 ## Contact
 
 For any questions or feedback, please contact me at **[adarshchoutha@gmail.com](mailto:adarshchoutha@gmail.com)**.
