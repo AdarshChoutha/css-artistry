@@ -1,0 +1,29 @@
+.tile {
+    background: #2495C2;
+}
+
+.square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border: solid 2px #eee;
+    border-radius: 0;
+    width: 200px;
+    height: 200px;
+    animation-name: square-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes square-animation {
+    50% {
+        transform: translate(-50%, -50%) rotate(calc(360deg - (180deg / var(--square-count)) * var(--square-index)));
+        border-radius: 50%;
+        width: 40px;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+}
