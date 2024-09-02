@@ -1,0 +1,111 @@
+.tile {
+    background: #2C2E2E;
+}
+
+.pacman,
+.pacman::before,
+.pacman::after,
+.pacman_eye,
+.pacman_body,
+.food {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.pacman {
+    background: transparent;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.pacman::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50px, -50px);
+    border-radius: 50px 50px 0 0;
+    background: #f4d146;
+    width: 100px;
+    height: 50px;
+    animation-name: pacman-1;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.pacman::after {
+    content: "";
+    transform: translate(-50px, 0);
+    border-radius: 0 0 50px 50px;
+    background: #f4d146;
+    width: 100px;
+    height: 50px;
+    animation-name: pacman-2;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes pacman-1 {
+    50% {
+        transform: translate(-64px, -100%) rotateZ(-45deg);
+    }
+}
+
+@keyframes pacman-2 {
+    50% {
+        transform: translate(-64px, -0%) rotateZ(45deg);
+    }
+}
+
+.pacman_eye {
+    top: 28%;
+    left: 64%;
+    background: #2c2e2e;
+    width: 10px;
+    height: 10px;
+    animation-name: pacman-eye-anime;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes pacman-eye-anime {
+    50% {
+        top: 20%;
+        left: 52%;
+    }
+}
+
+.pacman_body {
+    transform: translate(-72px, -50px);
+    border-radius: 0;
+    background: #f4d146;
+    width: 50px;
+    height: 100px;
+    animation: none;
+    z-index: -1;
+}
+
+.food {
+    transform: translate(1000%, -50%);
+    background: #f4d146;
+    width: 20px;
+    height: 20px;
+    animation-name: food-animation;
+    animation-duration: 2s;
+    animation-delay: calc(var(--food-index) * 0.4s);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes food-animation {
+    100% {
+        transform: translate(-100%, -50%);
+    }
+}
