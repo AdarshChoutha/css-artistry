@@ -1,0 +1,291 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.tile {
+    background: #E16D6C;
+}
+
+.container {
+    /* --delay-offset: 1.5; */
+    position: relative;
+}
+
+.click_me {
+    border: solid 1px white;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-53px, -47px);
+    padding: 4px;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.click_me:hover {
+    font-weight: 700;
+}
+
+.text_border,
+.text_border_left,
+.text_border_left::before,
+.text_border_left::after,
+.text_border_right,
+.text_border_right::before,
+.text_border_right::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    width: 0;
+    height: 0;
+}
+
+.text_border {
+    border-radius: 50%;
+    animation-name: text-border-anime;
+    animation-delay: calc(var(--delay-offset) * 1s);
+    animation-duration: calc(var(--delay-offset) * 0.6s);
+}
+
+.text_border_left,
+.text_border_right {
+    animation-delay: calc(var(--delay-offset) * 1.6s);
+    animation-duration: calc(var(--delay-offset) * 0.8s);
+}
+
+.text_border_left {
+    animation-name: text-border-left-anime;
+}
+
+.text_border_right {
+    animation-name: text-border-right-anime;
+}
+
+.text_border_left::before,
+.text_border_left::after,
+.text_border_right::before,
+.text_border_right::after {
+    content: "";
+    animation-delay: calc(var(--delay-offset) * 2.4s);
+    animation-duration: calc(var(--delay-offset) * 0.4s);
+}
+
+.text_border_left::before {
+    animation-name: text-border-left-before-anime;
+}
+
+.text_border_left::after {
+    animation-name: text-border-left-after-anime;
+}
+
+.text_border_right::before {
+    animation-name: text-border-right-before-anime;
+}
+
+.text_border_right::after {
+    animation-name: text-border-right-after-anime;
+}
+
+@keyframes text-border-anime {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    32% {
+        width: 100px;
+        height: 100px;
+    }
+
+    100% {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+@keyframes text-border-left-anime {
+    0% {
+        transform: translate(0px, -50%);
+        width: 0;
+        height: 4px;
+    }
+
+    32% {
+        transform: translate(-148px, -50%);
+        width: 148px;
+        height: 4px;
+    }
+
+    64% {
+        transform: translate(-148px, -50%);
+        width: 4px;
+        height: 4px;
+    }
+
+    100% {
+        transform: translate(-148px, -50%);
+        width: 4px;
+        height: 80px;
+    }
+}
+
+@keyframes text-border-right-anime {
+    0% {
+        transform: translate(0px, -50%);
+        width: 0;
+        height: 4px;
+    }
+
+    32% {
+        transform: translate(0px, -50%);
+        width: 148px;
+        height: 4px;
+    }
+
+    64% {
+        transform: translate(144px, -50%);
+        width: 4px;
+        height: 4px;
+    }
+
+    100% {
+        transform: translate(144px, -50%);
+        width: 4px;
+        height: 80px;
+    }
+}
+
+@keyframes text-border-left-before-anime {
+    0% {
+        transform: translate(0px, -40px);
+        width: 0;
+        height: 4px;
+    }
+
+    100% {
+        transform: translate(0px, -40px);
+        width: 24px;
+        height: 4px;
+    }
+}
+
+@keyframes text-border-left-after-anime {
+    0% {
+        transform: translate(0px, 36px);
+        width: 0;
+        height: 4px;
+    }
+
+    100% {
+        transform: translate(0px, 36px);
+        width: 24px;
+        height: 4px;
+    }
+}
+
+@keyframes text-border-right-before-anime {
+    0% {
+        transform: translate(0px, -40px);
+        width: 0;
+        height: 4px;
+    }
+
+    100% {
+        transform: translate(-24px, -40px);
+        width: 24px;
+        height: 4px;
+    }
+}
+
+@keyframes text-border-right-after-anime {
+    0% {
+        transform: translate(0px, 36px);
+        width: 0;
+        height: 4px;
+    }
+
+    100% {
+        transform: translate(-24px, 36px);
+        width: 24px;
+        height: 4px;
+    }
+}
+
+.p1_noAnime,
+.p3_noAnime {
+    display: none;
+}
+
+.p1,
+.p2,
+.p3 {
+    display: block;
+    margin: 0;
+    opacity: 0;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    animation-delay: calc(var(--delay-offset) * 2.8s);
+    animation-duration: calc(var(--delay-offset) * 0.4s);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.p1 {
+    animation-name: text-anime-p1;
+}
+
+.p2 {
+    font-size: 50px;
+    font-weight: 700;
+    animation-name: text-anime-p2;
+    animation-delay: calc(var(--delay-offset) * 2.2s);
+    animation-duration: calc(var(--delay-offset) * 0.6s);
+    transform: scaleY(0);
+}
+
+.p3 {
+    animation-name: text-anime-p3;
+}
+
+@keyframes text-anime-p1 {
+    0% {
+        transform: translate(-10%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(10%, 0);
+    }
+}
+
+@keyframes text-anime-p2 {
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes text-anime-p3 {
+    0% {
+        transform: translate(10%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-10%, 0);
+    }
+}
